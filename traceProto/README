@@ -1,0 +1,5 @@
+Protocol buffer definitions and the generated .go files. The files use gogoprotobuf extensions/libraries to speed up the processing (https://github.com/gogo/protobuf, https://gogo.github.io/). Therefore, you must install these dependencies before usage.
+
+to generate the go files:
+
+protoc --proto_path=/Users/admin/Downloads/protobuf-2.6.1/src/:. --gogo_out=. fs-c.proto
