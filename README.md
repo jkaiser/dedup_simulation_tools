@@ -1,6 +1,10 @@
 # dedup_simulation_tools
 
-## parser
+This repository includes several tools to handle and analyze deduplication traces that were generated with fs-c, the deduplication tracing tool from Dirk Meister (https://github.com/dmeister/fs-c). These tool are standalone, but usually were used in combination with a deduplication simulator (https://github.com/jkaiser/dedup_simulation).
+
+## The tools
+
+### parser
 Various parsing libraries for different deduplication trace formats. 
 
 **ubc** : The format as used by Meyer et. al [1].
@@ -9,17 +13,18 @@ Various parsing libraries for different deduplication trace formats.
 
 **legacy**: An trace format used in Meister's early research.
 
-## traceProto
-The protocol buffer files used for the proto traces.
+### traceProto
+Not a tool itself, but a necessary library for the other tools. The directory include protocol buffer files used for the protobuf traces.
 
-## generator
+### generator
 Takes the deduplication traces as collected by Dutch Meyer et. al [1] and converts them into the traces as the fs-c tool from Dirk Meister would create them (github.com/dmeister/fs-c). The latter is the input format for the deduplication simulator.
 
 The conversion uses metadata from Meyer's files. These are given in the all_file_metadata.txt file.
 
-## chunk_skewness
-Small tools to compute the chunk skewness, i.e. how many chunks occur how many times in a given trace.
+### chunk_skewness
+Tools to compute the chunk skewness/chunk bias, i.e. how many chunks occur how many times in a given trace.
 NOTE: The tool depends on the deduplication simulator.
 
 
+## References
 [1] A study of practical deduplication, DT Meyer, WJ Bolosky - ACM Transactions on Storage (TOS), 2012
